@@ -1,0 +1,151 @@
+\documentclass{anstrans}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{A DFEM Formulation of the Diffusion Equation on Arbitrary Polyhedral Grids}
+\author{Michael W. Hackemack,$^{*}$ Jean C. Ragusa$^{*}$}
+
+\institute{
+$^{*}$Department of Nuclear Engineering, Texas A\&M Univeristy, 
+}
+
+\email{mike\_hack@tamu.edu \and ragusa@ne.tamu.edu}
+
+% Optional disclaimer: remove this command to hide
+%\disclaimer{Notice: This manuscript is a work of fiction. Any resemblance to actual articles, living or dead, is purely coincidental.}
+
+%%%% packages and definitions (optional)
+\usepackage{graphicx} % allows inclusion of graphics
+\usepackage{booktabs} % nice rules (thick lines) for tables
+\usepackage{microtype} % improves typography for PDF
+
+\newcommand{\SN}{S$_N$}
+\renewcommand{\vec}[1]{\bm{#1}} %vector is bold italic
+\newcommand{\vd}{\bm{\cdot}} % slightly bold vector dot
+\newcommand{\grad}{\vec{\nabla}} % gradient
+\newcommand{\ud}{\mathop{}\!\mathrm{d}} % upright derivative symbol
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Theory}
+
+For this work, we will analyze a simple form of the diffusion equation that can be used for either monoenergetic neutron diffusion or the grey diffusion of radiation transport \cite{duderstadt1976nuclear}. This diffusion equation for this simple system is given by the following:
+
+\begin{equation} \label{eq:DIffEq}
+- \vec{\nabla} \cdot D \vec{\nabla} \Phi(\vec{x}) + \sigma \Phi(\vec{x}) = q(\vec{x}), \qquad x \in \mathcal{D}
+\end{equation}
+
+\noindent where $D$ is the diffusion coefficient, $\sigma$ is the total cross section, $q(\vec{x})$ is some source that can consist of fission and scattering terms as well as some distributed source, and $\Phi(\vec{x})$ is the scalar flux solution. The boundary conditions for this diffusion problem are
+
+\begin{equation} \label{eq:dirichlet_bndy}
+\Phi \, =\Phi_0 \qquad \vec{x} \in \partial \mathcal{D}^d
+\end{equation}
+
+\noindent for the Dirichlet boundaries,
+
+\begin{equation} \label{eq:neumann_bndy}
+- D \partial_n \Phi \, = J_{0} \qquad \vec{x} \in \partial \mathcal{D}^n
+\end{equation}
+
+\noindent for the Neumann boundaries, and
+
+\begin{equation} \label{eq:robin_bndy}
+ \frac{1}{4} \Phi + \frac{1}{2} D \partial_n \Phi \, = J^{inc} \qquad \vec{x} \in \partial \mathcal{D}^r
+\end{equation}
+
+\noindent for the Robin boundaries where the whole domain boundary: $\partial \mathcal{D} \in \mathcal{D}^d \cup \mathcal{D}^n \cup \mathcal{D}^r$. $\partial_n = \vec{n} \cdot \vec{\nabla}$ is defined as the partial derivative of the outward normal to the surface.
+
+Now that we have described the physical problem to be solved, we next define 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{DFEM Formulation of the Diffusion Equation}
+\label{sec::DFEM}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+For this work we choose to employ an interior penalty formulation of the diffusion equation based of the work of Nitsche and Arnold \cite{ref::nitsche_IP,ref::arnold_1982_IP}. which has been called the Modified Interior Penalty Method (MIP) \cite{wang2009adaptive,ref::DSA_2D_arb_poly,ref::DSA_wang_ragusa}. The MIP weak form for the diffusion equation in Eq. (\ref{eq:DIffEq}) is given by:
+
+\begin{equation}
+a( \Phi, \Phi^*) = b(\Phi^*)
+\label{eq:MIP_bilinear_form}
+\end{equation}
+
+\noindent with the following bilinear matrix:
+
+\begin{equation}
+\begin{aligned}
+a( \Phi, \Phi^*) = \Big<  D \vec{\nabla}  \Phi , \vec{\nabla} \Phi^*  \Big>_{\mathcal{D}} + \Big<  \sigma_a   \Phi ,  \Phi^*  \Big>_{\mathcal{D}} \\
++  \frac{1}{2} \Big<    \Phi ,   \Phi^*\Big>_{\partial \mathcal{D}^r} +  \Big< \kappa_e^{MIP} [\![   \Phi ]\!] , [\![  \Phi^* ]\!]\Big>_{E_h^i}  \\ 
++ \Big<  [\![   \Phi ]\!] , \{\!\{  D \partial_n \Phi^* \}\!\}\Big>_{E_h^i} +\Big< \{\!\{  D \partial_n  \Phi \}\!\} , [\![  \Phi^* ]\!]\Big>_{E_h^i} \\
++ \Big< \kappa_e^{MIP}   \Phi ,   \Phi^* \Big>_{\partial \mathcal{D}^d} -\Big<   \Phi  ,  D \partial_n \Phi^* \Big>_{\partial \mathcal{D}^d} -\Big<   D \partial_n  \Phi ,   \Phi^*\Big>_{\partial \mathcal{D}^d}  
+\end{aligned}
+\label{eq::MIP_bilinear_op}
+\end{equation}
+
+\noindent and with the following right-hand-side form:
+
+\begin{equation}
+\begin{aligned}
+b(\Phi^*) =& \Big<  Q, \Phi^*  \Big>_{\mathcal{D}}  - \Big<   J_{0}, \Phi^*  \Big>_{\partial \mathcal{D}^n} +  2 \Big<   J_{inc}, \Phi^*  \Big>_{\partial \mathcal{D}^r} 
+\end{aligned}
+\label{eq::MIP_rhs_op}
+\end{equation}
+
+\noindent where $\kappa_e^{MIP}$ is the MIP penalty coefficient and the mean value and the jump of the scalar flux on the interior faces, $E_h^i$, are given by 
+
+\begin{equation}
+\{\!\{ \Phi \}\!\} = \frac{\Phi^{+} + \Phi^{-}}{2} \qquad \text{and} \qquad  [\![ \Phi ]\!] = \Phi^{+} - \Phi^{-},
+\label{eq::mean_and_jump}
+\end{equation}
+
+\noindent respectively.
+
+The bilinear matrix is symmetric positive-definite and has been shown to be efficiently invertible with various preconditioning schemes \cite{ref::DSA_2D_arb_poly}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Basis Functions}
+\label{sec::PWLD}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+For this work, we wish to utilize FEM basis functions . For a given arbitrary polyhedral cell, $K$, the basis function at vertex $j$ is given by
+
+\begin{equation}
+b_j(x,y,z) = t_j(x,y,z) + \sum_{f=1}^{F_j} \beta_{f,j} t_f(x,y,z) + \alpha_{K,j} t_c(x,y,z), 
+\label{eq::3D_PWLD_basis_functions}
+\end{equation}
+
+\noindent where $t_j$ is the standard linear function with unity at vertex $j$ that linearly decreases to zero to the cell center, face center, and each vertex that shares an edge with vertex $j$, $t_c$ is the cell "tent" function which is unity at the cell center and linearly decreases to zero to each cell vertex and face center, $\alpha_{K,j}$ is the weight parameter for vertex $j$ in cell $K$, $\beta_{f,j}$ is the weight parameter for face $f$ touching cell vertex $j$, and $F_j$ is the number of faces touching vertex $j$. Like the previous work defining the PWLD method \cite{bailey2008phd}, we also choose to assume the cell and face weighting parameters are
+
+
+\begin{equation}
+\alpha_{K,j} = \frac{1}{N_K} \qquad \text{and} \qquad \beta_{f,j} = \frac{1}{N_f},
+\label{eq::PWLD_weight_vals}
+\end{equation}
+
+\noindent respectively, where $N_K$ is the number of vertices in cell $K$ and $N_f$ is the number of vertices on face $f$, which leads to constant values of $\alpha$ and $\beta$ for each cell and face, respectively. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Results and Analysis}
+
+To demonstrate 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusions}
+
+We have presented 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\appendix
+%\section{Appendix}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Acknowledgments}
+This material is based upon work supported by the Department of Energy Rickover Fellowship Program in Nuclear Engineering.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliographystyle{ans}
+\bibliography{references}
+\end{document}
+

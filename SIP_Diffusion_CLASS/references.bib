@@ -1,0 +1,801 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%	Title:		Reference List for Bibtex Bibliography
+%	
+%	Author:	Michael Wayne Hackemack
+%	Institution:	Texas A&M University
+%	Year:		2014
+%
+%	Description:	This is a listing of references being used 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% PWLD Sources and LD
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ANS proceedings where Adams first proposed PWLD
+@inproceedings{ref::PWLD_stone_adams,
+  title={A piecewise linear finite element basis with application to particle transport},
+  author={Stone, Hiromi G and Adams, Marvin L},
+  booktitle={Proc. ANS Topical Meeting Nuclear Mathematical and Computational Sciences Meeting},
+  pages={6--11},
+  year={2003}
+}
+
+@inproceedings{ref::PWLD_stone_adams_unstructured,
+  title={New Spatial Discretization Methods for Transport on Unstructured Grids},
+  author={Stone, Hiromi G and Adams, Marvin L},
+  booktitle={Proc. ANS Topical Meeting Mathematics and Computation, 
+Supercomputing, Reactor Physics and Biological Applications},
+  year={2005}
+}
+% Bailey dissertation
+@phdthesis{bailey2008phd,
+  title={The piecewise linear discontinuous finite element method applied to the RZ and XYZ transport equations},
+  author={Bailey, Teresa S},
+  year={2008},
+  school={Texas A\&M University}
+}
+% Bailey Cylindrical PWLD
+@inproceedings{bailey2008piecewise,
+  title={A Piecewise Linear Discontinuous Finite Element Spatial Discretization of the Transport Equation in 2D Cylindrical Geometry},
+  author={Bailey, Teresa S and Adams, Marvin L and Chang, Jae H and Warsa, James S},
+  booktitle={Proc. International Conference on Mathematics and Computational Methods \& Reactor Physics},
+  pages={3--7},
+  year={2008}
+}
+% 2011 - I don't know what
+@article{bailey2011piecewise,
+  title={A Piecewise Linear Discontinuous Finite Element Spatial Discretization of the Sn Transport Equation for Polyhedral Grids in 3D Cartesian Geometry},
+  author={Bailey, TS and Hawkins, WD and Adams, ML},
+  year={2011}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Transport Books
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@article{duderstadt1979transport,
+  title={Transport theory},
+  author={Duderstadt, James J and Martin, William Russell},
+  journal={Transport theory., by Duderstadt, JJ; Martin, WR. Chichester (UK): John Wiley \& Sons, 10+ 613 p.},
+  volume={1},
+  year={1979}
+}
+
+@book{stacey2007nuclear,
+  title={Nuclear reactor physics},
+  author={Stacey, Weston M},
+  year={2007},
+  publisher={John Wiley \& Sons}
+}
+
+@book{weston2012variational,
+  title={Variational methods in nuclear reactor physics},
+  author={Weston Jr, M and others},
+  volume={10},
+  year={2012},
+  publisher={Elsevier}
+}
+
+@book{bell1979nuclear,
+  title={Nuclear reactor theory},
+  author={Bell, George I and Glasstone, Samuel},
+  year={1979},
+  publisher={RE Krieger Publishing Company}
+}
+
+@book{lewis1984computational,
+  title={Computational methods of neutron transport},
+  author={Lewis, Elmer Eugene and Miller, Warren F},
+  year={1984},
+  publisher={John Wiley and Sons, Inc., New York, NY}
+}
+
+@book{duderstadt1976nuclear,
+  title={Nuclear reactor analysis},
+  author={Duderstadt, James J and Hamilton, Louis J},
+  year={1976},
+  publisher={Wiley}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Transport Sources
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Original LANL tech report for the Sn approximation to transport theory
+@techreport{carlson1958solution,
+  title={Solution of the transport equation by the Sn method},
+  author={Carlson, BG and Bell, GI},
+  year={1958},
+  institution={Los Alamos Scientific Lab., N. Mex.}
+}
+% The discrete extension of (carlson1958solution)
+@techreport{lee1961discrete,
+  title={The discrete Sn approximation to transport theory},
+  author={Lee, Clarence E},
+  year={1961},
+  institution={Los Alamos Scientific Lab., N. Mex.}
+}
+% Extension of (lee1961discrete) to include angular quadrature sets
+@techreport{lathrop1964discrete,
+  title={Discrete ordinates angular quadrature of the neutron transport equation},
+  author={Lathrop, Kaye D and Carlson, Bengt G},
+  year={1964},
+  institution={Los Alamos Scientific Lab., N. Mex.}
+}
+% Source showing the equivalence between Sn and Pn
+@article{jung1972discrete,
+  title={Discrete ordinate neutron transport equation equivalent to $P_N$ approximation},
+  author={Jung, Jungchung and Chijiwa, Hiroshi and Kobayashi, Keisuke and Nishihara, Hiroshi},
+  journal={Nucl. Sci. Eng},
+  volume={49},
+  pages={1},
+  year={1972}
+}
+% Strictly positive methods are less accurate than non-positive methods
+@article{lathrop1969spatial,
+  title={Spatial differencing of the transport equation: positivity vs. accuracy},
+  author={Lathrop, KD},
+  journal={Journal of computational physics},
+  volume={4},
+  number={4},
+  pages={475--498},
+  year={1969},
+  publisher={Elsevier}
+}
+
+@book{carlson1965transport,
+  title={Transport theory: the method of discrete ordinates},
+  author={Carlson, Bengt G and Lathrop, Kaye D},
+  year={1965},
+  publisher={Los Alamos Scientific Laboratory of the University of California}
+}
+% Ray effects are annoying
+@article{lathrop1968ray,
+  title={Ray effects in discrete ordinates equations},
+  author={Lathrop, Kaye D},
+  journal={Nucl. Sci. Eng},
+  volume={32},
+  number={3},
+  pages={357},
+  year={1968}
+}
+% Ridiculous and all encompassing Iterative methods paper from Adams and Larsen
+@article{ref::adams_larsen_iter_methods,
+  title={Fast iterative methods for discrete-ordinates particle transport calculations},
+  author={Adams, ML and Larsen, EW},
+  journal={Progress in nuclear energy},
+  volume={40},
+  number={1},
+  pages={3--159},
+  year={2002},
+  publisher={Elsevier}
+}
+
+@ARTICLE{ref::warsa_CFEM_DFEM,
+AUTHOR={James Warsa},
+TITLE={A Continuous Finite Element-Base, Discontinuous Finite Element Method for $S_n$ Transport},
+JOURNAL={Nuclear Science and Engineering},
+VOLUME={160},
+PAGES={385-400},
+YEAR={2008}
+}
+% Adams paper that shows the limitations of various DFEM basis functions 
+% and which ones give full solutions in thick diffusion limit
+@article{adams2001discontinuous,
+  title={Discontinuous finite element transport solutions in thick diffusive problems},
+  author={Adams, Marvin L},
+  journal={Nuclear science and engineering},
+  volume={137},
+  number={3},
+  pages={298--333},
+  year={2001},
+  publisher={American Nuclear Society}
+}
+% DFEM paper
+@article{larsen1982finite,
+  title={Finite-difference approximations and superconvergence for the discrete-ordinate equations in slab geometry},
+  author={Larsen, Edward W and Nelson, Paul},
+  journal={SIAM Journal on Numerical Analysis},
+  volume={19},
+  number={2},
+  pages={334--348},
+  year={1982},
+  publisher={SIAM}
+}
+% DFEM
+@article{larsen1989asymptotic,
+  title={Asymptotic solutions of numerical transport problems in optically thick, diffusive regimes II},
+  author={Larsen, Edward W and Morel, JE},
+  journal={Journal of Computational Physics},
+volume={128},
+  year={1989},
+pages={212-236}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Transport Codes
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 1D DFEM code
+@techreport{hill1975onetran,
+  title={ONETRAN: a discrete ordinates finite element code for the solution of the one-dimensional multigroup transport equation},
+  author={Hill, TR},
+  year={1975},
+  institution={Los Alamos Scientific Lab., N. Mex.(USA)}
+}
+% 2D triangle DFEM code
+@techreport{reed1973triplet,
+  title={TRIPLET: A two-dimensional, multigroup, triangular mesh, planar geometry, explicit transport code},
+  author={Reed, Wm H and Hill, TR and Brinkley, FW and Lathrop, KD},
+  year={1973},
+  institution={Los Alamos Scientific Lab., N. Mex.(USA)}
+}
+% Geant4
+@articles{ref::geant4,
+title={Geant4 - A Simulation Toolkit},
+author={S. Agostinelli et. al.},
+journal={Nuclear Instruments and Methods},
+year={2003},
+volume={A},
+pages={250-303}
+}
+% MCNP
+@techreport{ref::MCNP,
+  title={MCNP - A General N-Particle Transport Code, Version 5, Volume I: Overview and Theory},
+  author={X.-5. M.C. Team},
+  year={2003},
+  institution={Los Alamos Scientific Lab., N. Mex.(USA)}
+}
+% DANTSYS
+@techreport{ref::DANTSYS,
+  title={DANTSYS - 1, 2, 3, Dimensional Multigroup Discrete Ordinates Transport Code System},
+  author={R. O'Dell, F. Brinkley, D. Marr, and R. Alcouffe},
+  year={1995},
+  institution={LANL}
+}
+% TORT/DORT
+@techreport{ref::TORT,
+  title={TORT/DORT: 2 and 3 Dimensional Discrete Ordinates Transport},
+  author={W.R. Rhoades and R. Childs},
+  year={1991},
+  institution={ORNL}
+}
+% PENTRAN
+@inproceedings{ref::PENTRAN,
+  title={PENTRAN: A Three-Dimensional Scalable Transport Code with Complete Phase-Space Decomposition},
+  author={G.E. Sjoden and A. Haghighat},
+  booktitle={Transactions of the American Nuclear Society},
+  volume={74},
+  year={1996}
+}
+% TRITON
+@techreport{ref::TRITON,
+  title={TRITON: A Two-Dimensional Transport and Depletion Module for Characterization of Spent Nuclear Fuel},
+  author={M.D. DeHart},
+  year={2006},
+  institution={ORNL}
+}
+%NEWT
+@techreport{ref::NEWT,
+  title={NEWT: A new transport algorithm for two-dimensional discrete ordinates analysis in non-orthogonal geometries},
+  author={M.D. DeHart},
+  year={2006},
+  institution={ORNL}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Parallel Transport Sweeping Sources
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% M&C 2013 paper on optimal sweeping scheduling for regular grids
+% This will be the main extension for our work to quasi-unstructured grids
+@inproceedings{adams2013provably,
+  title={Provably Optimal Parallel Transport Sweeps on Regular Grids},
+  author={Adams, Michael P and Adams, Marvin L and Hawkins, W Daryl and Smith, Timmie and Rauchwerger, Lawrence and Amato, Nancy M and Bailey, Teresa S and Falgout, Robert D},
+  booktitle={Proc. International Conference on Mathematics and Computational Methods Applied to Nuclear Science \& Engineering, Idaho},
+  year={2013}
+}
+% Parallel Transport sweeps
+@INPROCEEDINGS{ref::eff_sweeps,
+AUTHOR={William Hawkins, Timmie Smith, Michael Adams, Lawrence Rauchwerger, Nancy Amato, and Marvin Adams},
+TITLE={Efficient Massively Parallel Transport Sweeps},
+BOOKTITLE={Transactions of the American Nuclear Society},
+YEAR={2012},
+VOLUME={107},
+PAGES={477-481}
+}
+%first KBA
+@INPROCEEDINGS{ref::KBA,
+AUTHOR={K.R. Koch, R.S. Baker, and R.E. Alcouffe},
+TITLE={Solution of the First-Order Form of Three-Dimensional Discrete Ordinates Equations on a Massively Parallel Machine},
+BOOKTITLE={Transactions of the American Nuclear Society},
+YEAR={1992},
+VOLUME={65},
+PAGES={198-199}
+}
+% second KBA Paper
+@article{baker1998s,
+  title={An $S_N$ algorithm for the massively parallel CM-200 computer},
+  author={Baker, Randal S and Koch, Kenneth R},
+  journal={Nuclear Science and Engineering},
+  volume={128},
+  number={3},
+  year={1998}
+}
+% Partial domain sweeping work
+@phdthesis{zerr2011solution,
+  title={Solution of the within-group multidimensional discrete ordinates transport equations on massively parallel architectures},
+  author={Zerr, Robert Joseph},
+  year={2011},
+  school={The Pennsylvania State University}
+}
+% evaluated 3 sweeping algorithms including KBA
+@inproceedings{bailey2009analysis,
+  title={Analysis of massively parallel discrete-ordinates transport sweep algorithms with collisions},
+  author={Bailey, Teresa S and Falgout, Robert D},
+  booktitle={International Conference on Mathematics, Computational Methods \& Reactor Physics, Saratoga Springs, NY},
+  year={2009}
+}
+
+@article{azmy1997multiprocessing,
+  title={Multiprocessing for neutron diffusion and deterministic transport methods},
+  author={Azmy, Yousry Y},
+  journal={Progress in Nuclear Energy},
+  volume={31},
+  number={3},
+  pages={317--368},
+  year={1997},
+  publisher={Elsevier}
+}
+
+@article{azmy1992performance,
+  title={Performance and performance modeling of a parallel algorithm for solving the neutron transport equation},
+  author={Azmy, Yousry Y},
+  journal={The Journal of Supercomputing},
+  volume={6},
+  number={3-4},
+  pages={211--235},
+  year={1992},
+  publisher={Springer}
+}
+
+@article{zeyao2004parallel,
+  title={Parallel flux sweep algorithm for neutron transport on unstructured grid},
+  author={Zeyao, Mo and Lianxiang, Fu},
+  journal={The Journal of Supercomputing},
+  volume={30},
+  number={1},
+  pages={5--17},
+  year={2004},
+  publisher={Springer}
+}
+
+@article{hanebutte1992massively,
+  title={A massively parallel discrete ordinates response matrix method for neutron transport},
+  author={Hanebutte, UR and Lewis, EE},
+  journal={Nuclear Science and Engineering;(United States)},
+  volume={111},
+  number={1},
+  year={1992}
+}
+
+@inproceedings{mathis2004performance,
+  title={Performance modeling of unstructured mesh particle transport computations},
+  author={Mathis, Mark M and Kerbyson, DK},
+  booktitle={Parallel and Distributed Processing Symposium, 2004. Proceedings. 18th International},
+  pages={245},
+  year={2004},
+  organization={IEEE}
+}
+
+% STAPL I
+@inproceedings{buss2010stapl,
+  title={STAPL: standard template adaptive parallel library},
+  author={Buss, Antal and Papadopoulos, Ioannis and Pearce, Olga and Smith, Timmie and Tanase, Gabriel and Thomas, Nathan and Xu, Xiabing and Bianco, Mauro and Amato, Nancy M and Rauchwerger, Lawrence and others},
+  booktitle={Proceedings of the 3rd Annual Haifa Experimental Systems Conference},
+  pages={14},
+  year={2010},
+  organization={ACM}
+}
+% STAPL II
+@inproceedings{tanase2011stapl,
+  title={The STAPL parallel container framework},
+  author={Tanase, Gabriel and Buss, Antal and Fidel, Adam and Harshvardhan, Harshvardhan and Papadopoulos, Ioannis and Pearce, Olga and Smith, Timmie and Thomas, Nathan and Xu, Xiabing and Mourad, Nedal and others},
+  booktitle={Proceedings of the 16th ACM symposium on Principles and practice of parallel programming},
+  pages={235--246},
+  year={2011},
+  organization={ACM}
+}
+% STAPL III
+@incollection{buss2011stapl,
+  title={The STAPL pView},
+  author={Buss, Antal and Fidel, Adam and Smith, Timmie and Tanase, Gabriel and Thomas, Nathan and Xu, Xiabing and Bianco, Mauro and Amato, Nancy M and Rauchwerger, Lawrence and others},
+  booktitle={Languages and Compilers for Parallel Computing},
+  pages={261--275},
+  year={2011},
+  publisher={Springer}
+}
+% STAPL IV
+@incollection{fidel2013stapl,
+  title={The STAPL Parallel Graph Library},
+  author={Fidel, Adam and Amato, Nancy M and Rauchwerger, Lawrence and others},
+  booktitle={Languages and Compilers for Parallel Computing},
+  pages={46--60},
+  year={2013},
+  publisher={Springer}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Early Acceleration Sources
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@inproceedings{ref::Lyusternik,
+  title={Remarks on Numerical Solution of the Boundary Value Problems for Laplace Equation and Calculation of Eigenvalues by the Mesh Method},
+  author={L.A. Lyusternik},
+  booktitle={Trudy Matem. Inst. An. USSR},
+  year={1947}
+}
+
+@book{hageman1981applied,
+  title={Applied Iterative Methods},
+  author={Hageman, Louis and Young, David},
+  year={1981},
+  publisher={Courier Dover Publications}
+}
+
+@book{wachspress1966iterative,
+  title={Iterative solution of elliptic systems: and applications to the neutron diffusion equations of reactor physics},
+  author={Wachspress, Eugene L},
+  year={1966},
+  publisher={Prentice-Hall Englewood Cliffs, NJ}
+}
+
+@techreport{lathrop1973twotran,
+  title={TWOTRAN-II: an interfaced, exportable version of the TWOTRAN code for two-dimensional transport},
+  author={Lathrop, KD and Brinkley, FW},
+  year={1973},
+  institution={Los Alamos Scientific Lab., N. Mex.(USA)}
+}
+
+@techreport{rhoades1973dot,
+  title={DOT III two-dimensional discrete ordinates transport code},
+  author={Rhoades, WA and Mynatt, FR},
+  year={1973},
+  institution={Oak Ridge National Lab., Tenn.(USA)}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% DSA Sources
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This is the original DSA paper
+@article{kopp1963synthetic,
+  title={Synthetic method solution of the transport equation},
+  author={Kopp, HJ},
+  journal={Nuclear Science and Engineering},
+  volume={17},
+  pages={65},
+  year={1963},
+  publisher={Academic Press}
+}
+% Thi is the nice extension to Sn methods
+@article{gelbard1969synthetic,
+  title={The synthetic method as applied to the SN equations},
+  author={Gelbard, EM and Hageman, LA},
+  journal={Nucl. Sci. Eng},
+  volume={37},
+  number={2},
+  pages={288},
+  year={1969}
+}
+% Lebedev I
+@inproceedings{lebedevI,
+  title={The Iterative {\em KP} Method for the Kinetic Equation},
+  author={Lebedev, VI},
+  booktitle={Proc. Conf. on Mathematical Methods for Solution of Nuclear Physics Problems},
+  year={1964}
+}
+% Lebedev II
+@article{lebedev1966kp,
+  title={The KP-method of accelerating the convergence of iterations in the solution of the kinetic equation},
+  author={Lebedev, VI},
+  journal={Numerical methods of solving problems of mathematical physics, Nauka, Moscow},
+  pages={154--176},
+  year={1966}
+}
+% Lebedev III
+@article{lebedevIII,
+  title={On Finding Solutions of Kinetic Problems},
+  author={Lebedev, VI},
+  journal={USSR Comp. Math. and Math. Phys.},
+  volume={6},
+  pages={895},
+  year={1966}
+}
+% Lebedev IV
+@article{lebedevIV,
+  title={An Iterative {\em KP} Method},
+  author={Lebedev, VI},
+  journal={USSR Comp. Math. and Math. Phys.},
+  volume={7},
+  pages={1250},
+  year={1967}
+}
+% Lebedev V
+@article{lebedevV,
+  title={Problem of the Convergence of a Method of Estimating Iteration Deviations},
+  author={Lebedev, VI},
+  journal={USSR Comp. Math. and Math. Phys.},
+  volume={8},
+  pages={1377},
+  year={1968}
+}
+% Lebedev VI
+@article{lebedevVI,
+  title={Convergence of the {\em KP} Method for Some Neutron Transfer Problems},
+  author={Lebedev, VI},
+  journal={USSR Comp. Math. and Math. Phys.},
+  volume={9},
+  pages={226},
+  year={1969}
+}
+% Lebedev VII
+@article{lebedevVII,
+  title={Construction of the {\em P} Operation in the {\em KP} Method},
+  author={Lebedev, VI},
+  journal={USSR Comp. Math. and Math. Phys.},
+  volume={9},
+  pages={762},
+  year={1969}
+}
+
+@article{reed1971effectiveness,
+  title={The effectiveness of acceleration techniques for iterative methods in transport theory},
+  author={Reed, Wm H},
+  journal={Nucl. Sci. Eng},
+  volume={45},
+  number={3},
+  pages={245},
+  year={1971}
+}
+
+@article{alcouffe1976stable,
+  title={Stable diffusion synthetic acceleration method for neutron transport iterations},
+  author={Alcouffe, RE},
+  journal={Trans. Am. Nucl. Soc.;(United States)},
+  volume={23},
+  year={1976},
+  publisher={Los Alamos Scientific Lab., NM}
+}
+% Slab geometry DSA that is unconditionally stable from Larsen - I
+@article{larsen1982unconditionally_I,
+  title={Unconditionally stable diffusion-synthetic acceleration methods for the slab geometry discrete ordinates equations. Part I: Theory},
+  author={Larsen, Edward W},
+  journal={Nucl. Sci. Eng},
+  volume={82},
+  pages={47},
+  year={1982}
+}
+% Slab geometry DSA that is unconditionally stable from Larsen - II
+@article{mccoy1982unconditionally_II,
+  title={Unconditionally stable diffusion-synthetic acceleration methods for the slab geometry discrete ordinates equations. Part II: Numerical results},
+  author={McCoy, Donald R and Larsen, Edward W},
+  journal={Nucl. Sci. Eng},
+  volume={82},
+  pages={64},
+  year={1982}
+}
+
+@article{adams1993diffusion,
+  title={Diffusion-synthetic acceleration given anisotropic scattering, general quadratures, and multidimensions},
+  author={Adams, ML and Wareing, TA},
+  journal={Transactions of the American Nuclear Society;(United States)},
+  volume={68},
+  number={CONF-930601--},
+  year={1993}
+}
+
+@article{morel1982synthetic_anisotropic,
+  title={A synthetic acceleration method for discrete ordinates calculations with highly anisotropic scattering},
+  author={Morel, JE},
+  journal={Nucl. Sci. Eng},
+  volume={82},
+  pages={34--46},
+  year={1982}
+}
+
+@article{larsen1984diffusion,
+  title={Diffusion-synthetic acceleration methods for discrete-ordinates problems},
+  author={Larsen, Edward W},
+  journal={Transport Theory and Statistical Physics},
+  volume={13},
+  number={1-2},
+  pages={107--126},
+  year={1984},
+  publisher={Taylor \& Francis}
+}
+% General DSA scheme for DFEM tranpsport methods
+@article{ref::dsa_DFEM_adams_martin,
+  title={Diffusion synthetic acceleration of discontinuous finite element transport iterations},
+  author={Adams, Marvin L and Martin, William R},
+  journal={Nucl. Sci. Eng},
+  volume={111},
+  pages={145--167},
+  year={1992}
+}
+% 2D MIP DSA paperthat is the main extender for 3D for this work (USE THIS ONE)
+@ARTICLE{ref::DSA_2D_arb_poly,
+AUTHOR={Bruno Turcksin and Jean Ragusa},
+TITLE={Discontinuous Diffusion Synthetic Acceleration for $S_n$ Transport on 2D Arbitrary Polygonal Meshes},
+JOURNAL={Journal of Computational Physics},
+VOLUME={},
+ISSUE={},
+PAGES={1-24},
+YEAR={2014}
+}
+% Wang dissertation
+@phdthesis{wang2009adaptive,
+  title={Adaptive mesh refinement solution techniques for the multigroup SN transport equation using a higher-order discontinuous finite element method},
+  author={Wang, Yaqi},
+  year={2009},
+  school={Texas A\&M University}
+}
+% Wang/Ragusa DSA AMR paper
+@ARTICLE{ref::DSA_wang_ragusa,
+AUTHOR={Yaqi Wang and Jean Ragusa},
+TITLE={Diffusion Synthetic Acceleration for High-Order Discontinuous Finite Element $S_n$ Transport Schemes and Application to Locally Refined Unstructured Meshes},
+JOURNAL={Nuclear Science and Engineering},
+VOLUME={166},
+PAGES={145-166},
+YEAR={2010}
+}
+% This is Nitsche's original interior penalty method (German)
+@inproceedings{ref::nitsche_IP,
+title={{\"U}ber ein Variationsprinzip zur L{\"o}sung von Dirichlet-Problemen bei Verwendung von Teilr{\"a}umen, die keinen Randbedingungen unterworfen sind},
+author={Nitsche, J},
+booktitle={Abhandlungen aus dem mathematischen Seminar der Universit{\"a}t Hamburg},
+volume={36},
+number={1},
+pages={9--15},
+year={1971},
+organization={Springer}
+}
+% Arnold's extension of Nitsche's work (ref::nitsche_IP) to discontinuous elements
+@article{ref::arnold_1982_IP,
+  title={An interior penalty finite element method with discontinuous elements},
+  author={Arnold, Douglas N},
+  journal={SIAM journal on numerical analysis},
+  volume={19},
+  number={4},
+  pages={742--760},
+  year={1982},
+  publisher={SIAM}
+}
+
+@article{morel1991angular,
+  title={An angular multigrid acceleration technique for $S_N$ equations with highly forward-peaked scattering},
+  author={Morel, JE and Manteuffel, TA},
+  journal={Nuclear Science and Engineering;(United States)},
+  volume={107},
+  number={4},
+  year={1991}
+}
+% Thermal Upscattering acceleration method for the multigroup Sn equations
+@article{adams1993two,
+  title={A two-grid acceleration scheme for the multigroup Sn equations with neutron upscattering},
+  author={Adams, BT and Morel, JE},
+  journal={Nuclear science and engineering},
+  volume={115},
+  number={3},
+  pages={253--264},
+  year={1993},
+  publisher={American Nuclear Society}
+}
+% kanschat paper 
+@book{kanschat2007discontinuous,
+  title={Discontinuous Galerkin methods for viscous incompressible flow},
+  author={Kanschat, Guido},
+  year={2007},
+  publisher={Deutscher Universit{\"a}ts-Verlag}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Meshing Sources
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Triangle I
+@incollection{shewchuk1996triangle,
+  title={Triangle: Engineering a 2D quality mesh generator and Delaunay triangulator},
+  author={Shewchuk, Jonathan Richard},
+  booktitle={Applied computational geometry towards geometric engineering},
+  pages={203--222},
+  year={1996},
+  publisher={Springer}
+}
+% Triangle II
+@article{shewchuk2002delaunay,
+  title={Delaunay refinement algorithms for triangular mesh generation},
+  author={Shewchuk, Jonathan Richard},
+  journal={Computational geometry},
+  volume={22},
+  number={1},
+  pages={21--74},
+  year={2002},
+  publisher={Elsevier}
+}
+% Tetgen
+@article{si2006quality,
+  title={A quality tetrahedral mesh generator and three-dimensional delaunay triangulator},
+  author={Si, Hang and TetGen, A},
+  journal={Weierstrass Institute for Applied Analysis and Stochastic, Berlin, Germany},
+  year={2006}
+}
+% Gmsh
+@article{geuzaine2009gmsh,
+  title={Gmsh: A 3-D finite element mesh generator with built-in pre-and post-processing facilities},
+  author={Geuzaine, Christophe and Remacle, Jean-Fran{\c{c}}ois},
+  journal={International Journal for Numerical Methods in Engineering},
+  volume={79},
+  number={11},
+  pages={1309--1331},
+  year={2009},
+  publisher={Wiley Online Library}
+}
+% PLC paper
+@inproceedings{ref::PLC,
+title={Control Volume Meshes Using Sphere Packing: Generation, Refinement and Coarsening},
+author={Miller G. L., Talmor D., Teng S.-H., Walkington N., and Wang H.},
+booktitle={Proceeding of the 5th International Meshing Roundtable},
+pages={47-61},
+year={1996},
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% MISC Sources
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Exascale computing white paper
+@article{bergman2008exascale,
+  title={Exascale computing study: Technology challenges in achieving exascale systems},
+  author={Bergman, Keren and Borkar, Shekhar and Campbell, Dan and Carlson, William and Dally, William and Denneau, Monty and Franzon, Paul and Harrod, William and Hill, Kerry and Hiller, Jon and others},
+  journal={Defense Advanced Research Projects Agency Information Processing Techniques Office (DARPA IPTO), Tech. Rep},
+  volume={15},
+  year={2008}
+}
+% MMS Source
+@techreport{salari2000code,
+  title={Code verification by the method of manufactured solutions},
+  author={Salari, Kambiz and Knupp, Patrick},
+  year={2000},
+  institution={Sandia National Labs., Albuquerque, NM (US); Sandia National Labs., Livermore, CA (US)}
+}
